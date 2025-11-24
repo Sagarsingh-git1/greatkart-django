@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'category',
     'accounts',
     'store',
-    'carts'
+    'carts',
+    'orders'
 ]
 
 MIDDLEWARE = [
@@ -112,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -151,4 +152,10 @@ EMAIL_HOST_USER='sagarcreane@gmail.com'
 EMAIL_HOST_PASSWORD='xulkkreucmzvvclv'
 EMAIL_USE_TLS=True
 
+
+
+
+# Cross-Origin Opener Policy (for popup windows)
+
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
 
