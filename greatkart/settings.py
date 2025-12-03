@@ -158,8 +158,10 @@ STATIC_ROOT = BASE_DIR / 'static'
 # Media FIles Configuration
 
 MEDIA_URL='/media/'
-
-MEDIA_ROOT= BASE_DIR /'media'
+if DEBUG:            #Used local (db.sqllite3)
+    MEDIA_ROOT= BASE_DIR /'media'
+else:               
+    MEDIA_ROOT = '/var/app/current/media'
 
 
 
