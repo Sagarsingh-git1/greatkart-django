@@ -161,7 +161,9 @@ MEDIA_URL='/media/'
 if DEBUG:            #Used local (db.sqllite3)
     MEDIA_ROOT= BASE_DIR /'media'
 else:               
-    MEDIA_ROOT = '/var/app/current/media'
+    
+    MEDIA_ROOT = '/var/app/media'
+
 
 
 
