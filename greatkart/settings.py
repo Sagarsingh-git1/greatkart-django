@@ -158,7 +158,10 @@ STATIC_ROOT = BASE_DIR / 'static'
 # Media FIles Configuration
 
 MEDIA_URL='/media/'
-MEDIA_ROOT= BASE_DIR /'media'
+if DEBUG:    
+    MEDIA_ROOT= BASE_DIR /'media'
+else:
+    MEDIA_ROOT = '/var/app/media'
  
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
