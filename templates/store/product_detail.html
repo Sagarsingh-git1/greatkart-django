@@ -156,7 +156,7 @@
 		<div class="icontext w-100">
 			<div class="text">
 				<span class="date text-muted float-md-right">{{review.updated_at}}</span>  
-				<h6 class="mb-1">{{user.first_name}} {{user.last_name}} </h6>
+				<h6 class="mb-1">{{review.user.first_name}} {{review.user.last_name}} </h6>
 				<div class="rating-star">
 					<span>
 				<i class="fa fa-star{% if review.rating == 0.5 %}-half-o{% elif review.rating < 1 %}-o {%endif%}" aria-hidden="true"></i>

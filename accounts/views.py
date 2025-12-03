@@ -92,7 +92,7 @@ def login(request):
                             item.quantity+=1
                             item.user=user
                             item.save()
-                        else:
+                        else:  
                             cart_item=CartItem.objects.filter(cart=cart)
                             for item in cart_item:
                                 item.user=user
@@ -143,7 +143,8 @@ def activate(request,uidb64,token):
 def dashboard(request):
     orders=Order.objects.filter(user=request.user,is_ordered=True)
     orders_count=orders.count()
-    userprofile=UserProfile.objects.get(user=request.user)
+    userprofile,created=UserProfile.objects.get_or_create(user=request.user)
+
     context={
         'orders_count':orders_count,
         'userprofile':userprofile

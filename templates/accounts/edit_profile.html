@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
 
@@ -18,7 +18,12 @@
 
 		<div class="card-body">
             <div class="text-right">
-            <img src="{{userprofile.profile_picture.url}}" alt="Profile Picture" width="100" style="border-radius: 50%;"></div>
+                {% if userprofile.profile_picture %}
+            <img src="{{userprofile.profile_picture.url}}" alt="Profile Picture" width="100" style="border-radius: 50%;">
+                {% else %}
+                <img src="{% static 'images/default-profile.jpg' %}" alt="Default Picture" width="100" style="border-radius: 50%;">
+                {% endif %}
+                </div>
 			<div class="row"> 
 				<div class="col-md-12">
                     <form action="{% url 'edit_profile' %}" method="POST" enctype="multipart/form-data">
